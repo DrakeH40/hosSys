@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Patient</title>
+</head>
+<body>
+    <h1>Edit {{ form.instance.first_name }} {{ form.instance.last_name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{% url 'home' %}">Home Page</a>
+    <a href="{% url 'patients:detail' form.instance.id %}">Cancel</a>
+</body>
+</html>

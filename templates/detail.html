@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details</title>
+</head>
+<body>
+    <h1>{{ patient.first_name }} {{ patient.last_name }}</h1>
+    <p>Date of Birth: {{ patient.date_of_birth }}</p>
+    <p>Phone Number: {{ patient.phone_number }}</p>
+    <p>Email: {{ patient.email }}</p>
+    <p>Address: {{ patient.address }}</p>
+    <p>Insurance Info: {{ patient.insurance_info }}</p>
+
+    <a href="{% url 'patients:edit' patient.id %}">Edit</a> |
+    <a href="{% url 'patients:index' %}">Back to Patients List</a>
+    <a href="{% url 'home' %}">Home Page</a>
+</body>
+</html>
